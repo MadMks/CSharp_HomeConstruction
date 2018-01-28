@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{41145235-BFBD-4BBA-BDAE-4DD85F2B1E79}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{A9184740-D9B2-44F4-BC38-60C15A0FC42B}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CSharp_HomeConstruction</RootNamespace>
-    <AssemblyName>CSharp_HomeConstruction</AssemblyName>
+    <RootNamespace>BuildersLib</RootNamespace>
+    <AssemblyName>BuildersLib</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,23 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="House.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="AbstractClasses\Employee.cs" />
+    <Compile Include="AbstractClasses\Human.cs" />
+    <Compile Include="AbstractClasses\Worker.cs" />
+    <Compile Include="Interface\IWorker.cs" />
+    <Compile Include="Positions\BasementBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Team.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BuildersLib\BuildersLib.csproj">
-      <Project>{a9184740-d9b2-44f4-bc38-60c15a0fc42b}</Project>
-      <Name>BuildersLib</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\HousePartsLib\HousePartsLib.csproj">
-      <Project>{73fec26c-b959-48bd-9a3d-3be7e9f17563}</Project>
-      <Name>HousePartsLib</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
