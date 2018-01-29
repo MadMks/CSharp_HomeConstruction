@@ -47,6 +47,12 @@
     <Compile Include="Positions\BasementBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HousePartsLib\HousePartsLib.csproj">
+      <Project>{73fec26c-b959-48bd-9a3d-3be7e9f17563}</Project>
+      <Name>HousePartsLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

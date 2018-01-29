@@ -17,15 +17,40 @@ namespace CSharp_HomeConstruction
             Team team = new Team();
             House house = new House();
 
-            foreach (Team item in team)
+
+
+            foreach (IPart item in house)
             {
-                if ((item as IWorker) is BasementBuilder)
+                Console.WriteLine($" {item.GetType().Name} - {item.IsBuilt}");
+            }
+            Console.WriteLine();
+
+
+
+            foreach (IWorker worker in team)
+            {
+                foreach (IPart part in house)
                 {
-                    ((item as IWorker) as BasementBuilder).Work();
-                    //(item as BasementBuilder).Work();
-                }
+                    worker.Work(part);
+                }   
+            }
+
+
+
+            Console.WriteLine();
+            foreach (IPart item in house)
+            {
+                Console.WriteLine($" {item.GetType().Name} - {item.IsBuilt}");
             }
 
         }
     }
 }
+
+//if ((item as IWorker) is BasementBuilder)
+//{
+//    ((item as IWorker) as BasementBuilder).Work();
+//    //(item as BasementBuilder).Work();
+//}
+
+/*(item as IWorker)*/

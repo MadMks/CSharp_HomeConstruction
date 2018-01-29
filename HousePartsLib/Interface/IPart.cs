@@ -8,5 +8,7 @@ namespace HousePartsLib
 {
     public interface IPart
     {
+        bool IsBuilt { get; set; }
+        void Build();
     }
 }

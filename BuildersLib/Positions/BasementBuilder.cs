@@ -4,23 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//using HousePartsLib;
+using HousePartsLib;
 
 namespace BuildersLib
 {
-    public class BasementBuilder : Worker/*, IWorker*/
+    public class BasementBuilder : Worker, IWorker
     {
-        public void Work(/*IPart[] part*/)
+        public void Work(IPart part)
         {
-            //throw new NotImplementedException();
-            //foreach (IPart item in part)
-            //{
+            //Console.WriteLine(part.IsBuilt);
+            
 
-            //}
-            //for (int i = 0; i < part. ; i++)
-            //{
+            if (part is Basement && part.IsBuilt == false)
+            {
+                Console.WriteLine(" >>> test - Work = BasementBuilder build Basement");
+                (part as Basement).Build();
+            }
 
-            //}
+            //Console.WriteLine(part.IsBuilt);
         }
     }
 }

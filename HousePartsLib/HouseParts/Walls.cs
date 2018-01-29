@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace HousePartsLib
 {
-    public class Basement : IPart
+    public class Walls : IPart
     {
         public bool IsBuilt { get; set; }
 
-        public Basement()
+        public Walls()
         {
             IsBuilt = false;
         }
@@ -18,11 +18,6 @@ namespace HousePartsLib
         public void Build()
         {
             IsBuilt = true;
-        }
-
-        public override string ToString()
-        {
-            return $" Построено: {IsBuilt}";
         }
     }
 }

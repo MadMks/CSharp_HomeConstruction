@@ -15,8 +15,13 @@ namespace CSharp_HomeConstruction
 
         public Team()
         {
-            workers = new IWorker[1];
-            workers[0] = new BasementBuilder();
+            //workers = new IWorker[1];
+            //workers[0] = new BasementBuilder();
+            workers = new IWorker[]
+            {
+                new BasementBuilder(),
+                new BasementBuilder()
+            };
         }
 
         IEnumerator IEnumerable.GetEnumerator()
