@@ -9,5 +9,6 @@ namespace BuildersLib
     public abstract class Worker : Employee
     {
         // свойство Специализация
+        public string Specialization { get; set; }  // TODO !?
     }
 }

@@ -45,6 +45,7 @@
     <Compile Include="AbstractClasses\Worker.cs" />
     <Compile Include="Interface\IWorker.cs" />
     <Compile Include="Positions\BasementBuilder.cs" />
+    <Compile Include="Positions\TeamLeader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

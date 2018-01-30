@@ -16,6 +16,7 @@ namespace CSharp_HomeConstruction
 
             Team team = new Team();
             House house = new House();
+            //Team team = new Team(house.parts);   // +-
 
 
 
@@ -29,10 +30,11 @@ namespace CSharp_HomeConstruction
 
             foreach (IWorker worker in team)
             {
-                foreach (IPart part in house)
-                {
-                    worker.Work(part);
-                }   
+                //foreach (IPart part in house)
+                //{
+                //    worker.Work(part);
+                //}  
+                worker.Work(house.parts);   // +-? 
             }
 
 

@@ -11,13 +11,13 @@ namespace CSharp_HomeConstruction
 {
     public class House : IEnumerable
     {
-        IPart[] parts;
-        //public IPart[] Parts { get; set; }
-        public bool HouseIsBuilt { get; set; }
+        //IPart[] parts;
+        public IPart[] parts { get; set; }  // +-   // TODO p -> P
+        public bool HouseIsBuilt { get; set; }  // TODO ???
 
         public House()
         {
-            HouseIsBuilt = false;
+            HouseIsBuilt = false;   // TODO ???
             //parts = new IPart[2];
             //parts[0] = new Basement();
             //parts[1] = new

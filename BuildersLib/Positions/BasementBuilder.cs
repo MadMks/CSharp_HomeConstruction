@@ -10,18 +10,30 @@ namespace BuildersLib
 {
     public class BasementBuilder : Worker, IWorker
     {
-        public void Work(IPart part)
-        {
-            //Console.WriteLine(part.IsBuilt);
+        //public void Work(IPart part)
+        //{
+        //    //Console.WriteLine(part.IsBuilt);
             
 
-            if (part is Basement && part.IsBuilt == false)
-            {
-                Console.WriteLine(" >>> test - Work = BasementBuilder build Basement");
-                (part as Basement).Build();
-            }
+        //    if (part is Basement && part.IsBuilt == false)
+        //    {
+        //        Console.WriteLine(" >>> test - Work = BasementBuilder build Basement");
+        //        (part as Basement).Build();
+        //    }
 
-            //Console.WriteLine(part.IsBuilt);
+        //    //Console.WriteLine(part.IsBuilt);
+        //}
+
+        public void Work(IPart[] parts)
+        {
+            foreach (IPart part in parts)
+            {
+                if (part is Basement && part.IsBuilt == false)
+                {
+                    Console.WriteLine(" >>> test - Work = BasementBuilder build Basement");
+                    (part as Basement).Build();
+                }
+            }
         }
     }
 }

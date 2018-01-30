@@ -11,6 +11,7 @@ namespace BuildersLib
     public interface IWorker/* : IPart*/
     {
         // метод Работать или Строить
-        void Work(IPart part);
+        //void Work(IPart part);
+        void Work(IPart[] parts);   // +-?
     }
 }

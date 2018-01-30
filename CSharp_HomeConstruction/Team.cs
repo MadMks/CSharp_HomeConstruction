@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using BuildersLib;
+using HousePartsLib;
 
 namespace CSharp_HomeConstruction
 {
@@ -21,8 +22,19 @@ namespace CSharp_HomeConstruction
             {
                 new BasementBuilder(),
                 new BasementBuilder()
+                //new TeamLeader(House)
             };
         }
+
+        //public Team() { }
+        //public Team(IPart[] parts)
+        //{
+        //    workers = new IWorker[]
+        //    {
+        //        new TeamLeader(parts),
+        //        new BasementBuilder()
+        //    };
+        //}
 
         IEnumerator IEnumerable.GetEnumerator()
         {
