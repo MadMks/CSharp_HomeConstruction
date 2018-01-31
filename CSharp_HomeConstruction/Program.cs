@@ -19,27 +19,41 @@ namespace CSharp_HomeConstruction
             //Team team = new Team(house.parts);   // +-
 
 
-
             foreach (IPart item in house)
             {
                 Console.WriteLine($" {item.GetType().Name} - {item.IsBuilt}");
             }
-            Console.WriteLine();
+            Console.WriteLine("\n");
 
 
-
+            // Ищем бригадира, чтобы он вывел предварительный отчет.
             foreach (IWorker worker in team)
             {
-                //foreach (IPart part in house)
-                //{
-                //    worker.Work(part);
-                //}  
-                worker.Work(house.parts);   // +-? 
+                if (worker is TeamLeader)
+                {
+                    (worker as TeamLeader).PreliminaryReport(house.parts);  // TODO P
+                }
             }
+            Console.WriteLine("\n");
+
+
+            // Строительство дома.
+            while (house.CheckWhetherTheHouseIsBuilt() == false)
+            {
+                foreach (IWorker worker in team)
+                {
+                    //foreach (IPart part in house)
+                    //{
+                    //    worker.Work(part);
+                    //}  
+                    worker.Work(house.parts);   // +-? 
+                }
+            }
+            
 
 
 
-            Console.WriteLine();
+            Console.WriteLine("\n\n");
             foreach (IPart item in house)
             {
                 Console.WriteLine($" {item.GetType().Name} - {item.IsBuilt}");

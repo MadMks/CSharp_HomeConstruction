@@ -28,6 +28,19 @@ namespace CSharp_HomeConstruction
             };
         }
 
+        public bool CheckWhetherTheHouseIsBuilt()
+        {
+            foreach (IPart part in parts)
+            {
+                if (part.IsBuilt == false)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         IEnumerator IEnumerable.GetEnumerator()
         {
             return parts.GetEnumerator();
