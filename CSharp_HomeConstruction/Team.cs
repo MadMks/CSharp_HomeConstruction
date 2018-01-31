@@ -21,8 +21,8 @@ namespace CSharp_HomeConstruction
             workers = new IWorker[]
             {
                 new BasementBuilder(),
-                new BasementBuilder()
-                //new TeamLeader(House)
+                new WallsBuilder(),
+                new TeamLeader()
             };
         }
 

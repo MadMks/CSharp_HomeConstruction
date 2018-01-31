@@ -6,8 +6,16 @@ using System.Threading.Tasks;
 
 namespace HousePartsLib
 {
+
+    struct MyStruct
+    {
+
+    }
+
     public interface IPart
     {
+        int NumberOfParts { get; set; }
+        int NumberBuiltParts { get; set; }
         bool IsBuilt { get; set; }
         void Build();
     }

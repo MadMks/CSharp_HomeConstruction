@@ -24,7 +24,7 @@ namespace CSharp_HomeConstruction
             parts = new IPart[]
             {
                 new Basement(),
-                new Walls()
+                new Walls(2)
             };
         }
 
