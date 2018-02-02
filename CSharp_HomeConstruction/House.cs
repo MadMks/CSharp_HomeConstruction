@@ -14,9 +14,12 @@ namespace CSharp_HomeConstruction
         //IPart[] parts;
         public IPart[] parts { get; set; }  // +-   // TODO p -> P
         public bool HouseIsBuilt { get; set; }  // TODO ???
+        private int _nIterations;
 
         public House()
         {
+            _nIterations = 0;
+
             HouseIsBuilt = false;   // TODO ???
             //parts = new IPart[2];
             //parts[0] = new Basement();
@@ -39,6 +42,36 @@ namespace CSharp_HomeConstruction
             }
 
             return true;
+        }
+
+        public void CheckAvailabilityOfAllEmployees()
+        {
+            _nIterations++;
+
+            if (_nIterations > NumberOfAllPartsInHouse())
+            {
+                throw new NoRelevantEmployees();
+            }
+        }
+
+        private int NumberOfAllPartsInHouse()
+        {
+            int nOfAllParts = 0;
+
+            // Считаем кол-во всех частей дома,
+            foreach (IPart part in parts)
+            {
+                if (part.NumberOfParts > 1)
+                {
+                    nOfAllParts += part.NumberOfParts;
+                }
+                else if (part.NumberOfParts == 1)
+                {
+                    nOfAllParts++;
+                }
+            }
+
+            return nOfAllParts;
         }
 
         IEnumerator IEnumerable.GetEnumerator()

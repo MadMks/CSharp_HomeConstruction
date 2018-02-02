@@ -19,10 +19,6 @@ namespace BuildersLib
 
         public void Work(IPart[] parts)
         {
-            // Работа бригадира состоит в формировании отчета.
-
-            // формирует отчёт, что уже построено
-            // и какая часть работы выполнена.
 
             int nBuiltParts = 0;
 
@@ -43,7 +39,6 @@ namespace BuildersLib
                 }
             }
 
-            // TODO выводим какая часть работы выполнена (возможно в процентах)
             ShowPartOfTheWorkInPercent(parts);
 
             Console.WriteLine("\n" + new string('=', 36));
@@ -63,13 +58,7 @@ namespace BuildersLib
 
             WriteLine("\n Строительство дома завершено.\n");
 
-            
-        }
-
-        // Изображение дома.
-        void ImageOfTheHouse()
-        {
-            WriteLine("#\n#\n#\n#\n#\n#\n#\n");
+            ImageOfTheHouse();
         }
 
         // Предварительный отчет.
@@ -116,6 +105,31 @@ namespace BuildersLib
             
             Console.WriteLine("\n Всего выполнено: "
                 + $"{Math.Round((100 / (double)nOfAllParts) * nBuiltParts)}% работы.");
+        }
+
+
+        private void ImageOfTheHouse()
+        {
+            Console.WriteLine(@"
+                           (   )
+                          (    )
+                           (    )
+                          (    )
+                            )  )
+                           (  (                  /\
+                            (_)                 /  \  /\
+                    ________[_]________      /\/    \/  \
+           /\      /\        ______    \    /   /\/\  /\/\
+          /  \    //_\       \    /\    \  /\/\/    \/    \
+   /\    / /\/\  //___\       \__/  \    \/
+  /  \  /\/    \//_____\       \ |[]|     \
+ /\/\/\/       //_______\       \|__|      \
+/      \      /XXXXXXXXXX\                  \
+        \    /_I_II  I__I_\__________________\
+               I_I|  I__I_____[]_|_[]_____I
+               I_II  I__I_____[]_|_[]_____I
+               I II__I  I     XXXXXXX     I
+            ~~~~~'   '~~~~~~~~~~~~~~~~~~~~~~~~" + "\n\n");
         }
 
 

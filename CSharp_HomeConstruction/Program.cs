@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using HousePartsLib;
 using BuildersLib;
 
+// TODO если не добавить работника для соответствующей части, то цыкл будет бесконечным
+
 namespace CSharp_HomeConstruction
 {
     class Program
@@ -19,11 +21,11 @@ namespace CSharp_HomeConstruction
             //Team team = new Team(house.parts);   // +-
 
 
-            foreach (IPart item in house)
-            {
-                Console.WriteLine($" {item.GetType().Name} - {item.IsBuilt}");
-            }
-            Console.WriteLine("\n");
+            //foreach (IPart item in house)
+            //{
+            //    Console.WriteLine($" {item.GetType().Name} - {item.IsBuilt}");
+            //}
+            //Console.WriteLine("\n");
 
 
             // Ищем бригадира, чтобы он вывел предварительный отчет.
@@ -37,27 +39,43 @@ namespace CSharp_HomeConstruction
             Console.WriteLine("\n");
 
 
-            // Строительство дома.
-            while (house.CheckWhetherTheHouseIsBuilt() == false)
+            try
             {
-                foreach (IWorker worker in team)
+                // Строительство дома.
+                while (house.CheckWhetherTheHouseIsBuilt() == false)
                 {
-                    //foreach (IPart part in house)
-                    //{
-                    //    worker.Work(part);
-                    //}  
-                    worker.Work(house.parts);   // +-? 
+                    foreach (IWorker worker in team)
+                    {
+                        //foreach (IPart part in house)
+                        //{
+                        //    worker.Work(part);
+                        //}  
+                        worker.Work(house.parts);   // +-? 
+                    }
+
+                    // Если кол-во итераций больше кол-ва частей
+                    // кинем исключени (нет подходящего работника).
+                    house.CheckAvailabilityOfAllEmployees();
                 }
             }
+            catch (NoRelevantEmployees e)
+            {
+                Console.WriteLine("\n [error]" + e.Message + "\n");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            
             
 
 
 
-            Console.WriteLine("\n\n");
-            foreach (IPart item in house)
-            {
-                Console.WriteLine($" {item.GetType().Name} - {item.IsBuilt}");
-            }
+            //Console.WriteLine("\n\n");
+            //foreach (IPart item in house)
+            //{
+            //    Console.WriteLine($" {item.GetType().Name} - {item.IsBuilt}");
+            //}
 
         }
     }
