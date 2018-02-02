@@ -19,7 +19,10 @@ namespace CSharp_HomeConstruction
             Team team = new Team();
             House house = new House();
             //Team team = new Team(house.parts);   // +-
-
+            if (true)
+            {
+                throw new TeamDoesNotHaveATeamLeader();
+            }
 
             //foreach (IPart item in house)
             //{
@@ -60,11 +63,21 @@ namespace CSharp_HomeConstruction
             }
             catch (NoRelevantEmployees e)
             {
+                Design.Red();
                 Console.WriteLine("\n [error]" + e.Message + "\n");
+                Design.Default();
+            }
+            catch (TeamDoesNotHaveATeamLeader e)
+            {
+                Design.Red();
+                Console.WriteLine("\n [error]" + e.Message + "\n");
+                Design.Default();
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Design.Red();
+                Console.WriteLine("\n [error]" + e.Message + "\n");
+                Design.Default();
             }
             
             

@@ -24,6 +24,8 @@ namespace CSharp_HomeConstruction
                 new WallsBuilder(),
                 new TeamLeader()
             };
+            
+            //throw new TeamDoesNotHaveATeamLeader();
         }
 
         //public Team() { }
