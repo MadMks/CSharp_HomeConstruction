@@ -8,5 +8,6 @@ namespace BuildersLib
 {
     public abstract class Employee
     {
+        // TODO  можно написать зп, и название фирмы.
     }
 }

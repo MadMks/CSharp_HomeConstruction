@@ -8,10 +8,8 @@ using HousePartsLib;
 
 namespace BuildersLib
 {
-    public interface IWorker/* : IPart*/
+    public interface IWorker
     {
-        // метод Работать или Строить
-        //void Work(IPart part);
-        void Work(IPart[] parts);   // +-?
+        void Work(IPart[] parts);
     }
 }

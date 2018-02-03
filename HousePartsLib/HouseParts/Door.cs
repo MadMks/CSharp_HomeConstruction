@@ -6,19 +6,18 @@ using System.Threading.Tasks;
 
 namespace HousePartsLib
 {
-    public class Walls : IPart
+    public class Door : IPart
     {
         public int NumberOfParts { get; set; }
         public bool IsBuilt { get; set; }
         public int NumberBuiltParts { get; set; } = 0;
 
-
-        public Walls()
+        public Door()
         {
             NumberOfParts = 1;
             IsBuilt = false;
         }
-        public Walls(int numberOfParts)
+        public Door(int numberOfParts)
         {
             NumberOfParts = numberOfParts;
             IsBuilt = false;
@@ -36,7 +35,7 @@ namespace HousePartsLib
 
         public override string ToString()
         {
-            return " Стены";
+            return " Дверь";
         }
 
 

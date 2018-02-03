@@ -11,29 +11,26 @@ namespace CSharp_HomeConstruction
 {
     public class House : IEnumerable
     {
-        //IPart[] parts;
-        public IPart[] parts { get; set; }  // +-   // TODO p -> P
-        public bool HouseIsBuilt { get; set; }  // TODO ???
+        public IPart[] Parts { get; set; }
         private int _nIterations;
 
         public House()
         {
             _nIterations = 0;
 
-            HouseIsBuilt = false;   // TODO ???
-            //parts = new IPart[2];
-            //parts[0] = new Basement();
-            //parts[1] = new
-            parts = new IPart[]
+            Parts = new IPart[]
             {
                 new Basement(),
+                new Window(4),
+                new Roof(),
+                new Door(),
                 new Walls(4)
             };
         }
 
         public bool CheckWhetherTheHouseIsBuilt()
         {
-            foreach (IPart part in parts)
+            foreach (IPart part in Parts)
             {
                 if (part.IsBuilt == false)
                 {
@@ -59,7 +56,7 @@ namespace CSharp_HomeConstruction
             int nOfAllParts = 0;
 
             // Считаем кол-во всех частей дома,
-            foreach (IPart part in parts)
+            foreach (IPart part in Parts)
             {
                 if (part.NumberOfParts > 1)
                 {
@@ -76,7 +73,9 @@ namespace CSharp_HomeConstruction
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return parts.GetEnumerator();
+            return Parts.GetEnumerator();
         }
+
+
     }
 }

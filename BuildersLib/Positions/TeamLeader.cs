@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using HousePartsLib;
 using DesignDll;
 
@@ -11,19 +12,9 @@ namespace BuildersLib
 {
     public class TeamLeader : Worker, IWorker
     {
-        //IPart[] _parts;  // +-
-        //public TeamLeader() { }
-        //public TeamLeader(IPart[] parts)  // +-
-        //{
-        //    _parts = parts;
-        //}
-
         public void Work(IPart[] parts)
         {
-
-            int nBuiltParts = 0;
-
-            //WriteLine(new string('=', 36));
+            int nBuiltParts = 0;    // построенные части.
 
             WriteLine("\n Отчет о выполненных работах:\n");
 
@@ -35,7 +26,7 @@ namespace BuildersLib
 
                     nBuiltParts++;
                 }
-                else if (part.NumberOfParts > 1)
+                else if (part.NumberOfParts > 1 && part.NumberBuiltParts > 0)
                 {
                     Write(part + $": построено - {part.NumberBuiltParts} из {part.NumberOfParts} частей\n");
                 }
@@ -45,8 +36,8 @@ namespace BuildersLib
 
             WriteLine("\n" + new string('=', 36));
 
-            // если все построено, то вызовем метод
-            // все построено
+            // Если все построено, то вызовем метод
+            // "все построено"
             if (nBuiltParts == parts.Length)
             {
                 WriteLine(" Нажмите любую клавишу.");

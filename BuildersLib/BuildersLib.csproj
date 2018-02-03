@@ -45,8 +45,11 @@
     <Compile Include="AbstractClasses\Worker.cs" />
     <Compile Include="Interface\IWorker.cs" />
     <Compile Include="Positions\BasementBuilder.cs" />
+    <Compile Include="Positions\DoorBuilder.cs" />
+    <Compile Include="Positions\RoofBuilder.cs" />
     <Compile Include="Positions\TeamLeader.cs" />
     <Compile Include="Positions\WallsBuilder.cs" />
+    <Compile Include="Positions\WindowBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

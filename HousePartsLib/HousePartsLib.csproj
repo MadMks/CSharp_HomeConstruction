@@ -41,7 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HouseParts\Basement.cs" />
+    <Compile Include="HouseParts\Door.cs" />
+    <Compile Include="HouseParts\Roof.cs" />
     <Compile Include="HouseParts\Walls.cs" />
+    <Compile Include="HouseParts\Window.cs" />
     <Compile Include="Interface\IPart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

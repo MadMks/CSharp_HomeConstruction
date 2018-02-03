@@ -8,5 +8,6 @@ namespace BuildersLib
 {
     public abstract class Human
     {
+        // TODO  можно написать фамилию, имя, дату рождения.
     }
 }

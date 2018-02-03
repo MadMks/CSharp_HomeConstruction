@@ -8,24 +8,23 @@ using HousePartsLib;
 
 namespace BuildersLib
 {
-    public class WallsBuilder : Worker, IWorker
+    public class RoofBuilder : Worker, IWorker
     {
         public void Work(IPart[] parts)
         {
-
             if (ThePreviousPartIsBuilt(parts))
             {
                 foreach (IPart part in parts)
                 {
-                    if (part is Walls && part.IsBuilt == false)
+                    if (part is Roof && part.IsBuilt == false)
                     {
                         DownloadBar();
-                        (part as Walls).Build();
+                        (part as Roof).Build();
                     }
                 }
             }
-            
         }
+
 
         // Проверяем построена ли предыдущая часть
         // (нужная для стротельства текущей части).
@@ -33,7 +32,7 @@ namespace BuildersLib
         {
             foreach (IPart part in parts)
             {
-                if (part is Basement && part.IsBuilt == true)
+                if (part is Window && part.IsBuilt == true)
                 {
                     return true;
                 }
@@ -41,6 +40,7 @@ namespace BuildersLib
 
             return false;
         }
+
 
 
     }
