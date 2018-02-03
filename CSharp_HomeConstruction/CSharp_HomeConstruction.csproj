@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Design.cs" />
     <Compile Include="House.cs" />
     <Compile Include="NoRelevantEmployees.cs" />
     <Compile Include="Program.cs" />
@@ -58,6 +57,10 @@
     <ProjectReference Include="..\BuildersLib\BuildersLib.csproj">
       <Project>{a9184740-d9b2-44f4-bc38-60c15a0fc42b}</Project>
       <Name>BuildersLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DesignDll\DesignDll.csproj">
+      <Project>{dd9d1290-8954-485c-928b-8d811bb169a7}</Project>
+      <Name>DesignDll</Name>
     </ProjectReference>
     <ProjectReference Include="..\HousePartsLib\HousePartsLib.csproj">
       <Project>{73fec26c-b959-48bd-9a3d-3be7e9f17563}</Project>

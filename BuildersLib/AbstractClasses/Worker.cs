@@ -10,5 +10,17 @@ namespace BuildersLib
     {
         // свойство Специализация
         public string Specialization { get; set; }  // TODO !?
+
+        protected void DownloadBar()
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                Console.Write(" #");
+                System.Threading.Thread.Sleep(100);
+            }
+            Console.WriteLine("   Нажмите любую клавишу.");
+            Console.ReadKey();
+            //Console.WriteLine();
+        }
     }
 }

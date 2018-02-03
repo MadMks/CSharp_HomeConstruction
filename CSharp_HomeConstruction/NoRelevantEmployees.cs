@@ -10,7 +10,7 @@ namespace CSharp_HomeConstruction
     public class NoRelevantEmployees : Exception
     {
         public NoRelevantEmployees() 
-            : this(" Для определенных частей дома нет соответствующих работников.") { }
+            : this("Для определенных частей дома нет соответствующих работников.") { }
         public NoRelevantEmployees(string message) : base(message) { }
         public NoRelevantEmployees(string message, Exception inner) : base(message, inner) { }
         protected NoRelevantEmployees(

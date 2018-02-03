@@ -30,7 +30,8 @@ namespace BuildersLib
             {
                 if (part is Basement && part.IsBuilt == false)
                 {
-                    Console.WriteLine(" >>> test - Work = BasementBuilder build Basement");
+                    //Console.WriteLine(" #");
+                    DownloadBar();
                     (part as Basement).Build();
                 }
             }

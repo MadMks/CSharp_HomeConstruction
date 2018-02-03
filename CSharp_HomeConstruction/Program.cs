@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using HousePartsLib;
 using BuildersLib;
+using DesignDll;
 
 // TODO если не добавить работника для соответствующей части, то цыкл будет бесконечным
 
@@ -19,17 +20,17 @@ namespace CSharp_HomeConstruction
             Team team = new Team();
             House house = new House();
             //Team team = new Team(house.parts);   // +-
-            if (true)
-            {
-                throw new TeamDoesNotHaveATeamLeader();
-            }
+            //if (true)
+            //{
+            //    throw new TeamDoesNotHaveATeamLeader();
+            //}
 
             //foreach (IPart item in house)
             //{
             //    Console.WriteLine($" {item.GetType().Name} - {item.IsBuilt}");
             //}
             //Console.WriteLine("\n");
-
+            //team.SearchTeamLeader();
 
             // Ищем бригадира, чтобы он вывел предварительный отчет.
             foreach (IWorker worker in team)
@@ -54,29 +55,33 @@ namespace CSharp_HomeConstruction
                         //    worker.Work(part);
                         //}  
                         worker.Work(house.parts);   // +-? 
+
+                        //System.Threading.Thread.Sleep(1000);
                     }
 
                     // Если кол-во итераций больше кол-ва частей
                     // кинем исключени (нет подходящего работника).
                     house.CheckAvailabilityOfAllEmployees();
                 }
+
+                //throw new TeamDoesNotHaveATeamLeader();
             }
             catch (NoRelevantEmployees e)
             {
                 Design.Red();
-                Console.WriteLine("\n [error]" + e.Message + "\n");
+                Console.WriteLine("\n [error] " + e.Message + "\n");
                 Design.Default();
             }
-            catch (TeamDoesNotHaveATeamLeader e)
-            {
-                Design.Red();
-                Console.WriteLine("\n [error]" + e.Message + "\n");
-                Design.Default();
-            }
+            //catch (TeamDoesNotHaveATeamLeader e)
+            //{
+            //    Design.Red();
+            //    Console.WriteLine("\n [error]" + e.Message + "\n");
+            //    Design.Default();
+            //}
             catch (Exception e)
             {
                 Design.Red();
-                Console.WriteLine("\n [error]" + e.Message + "\n");
+                Console.WriteLine("\n [error] " + e.Message + "\n");
                 Design.Default();
             }
             

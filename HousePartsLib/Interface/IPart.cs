@@ -6,12 +6,6 @@ using System.Threading.Tasks;
 
 namespace HousePartsLib
 {
-
-    struct MyStruct
-    {
-
-    }
-
     public interface IPart
     {
         int NumberOfParts { get; set; }

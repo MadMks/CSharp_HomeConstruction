@@ -19,7 +19,8 @@ namespace BuildersLib
                 {
                     if (part is Walls && part.IsBuilt == false)
                     {
-                        Console.WriteLine(" >>> test - Work = WallsBuilder build  -> Walls");
+                        //Console.WriteLine(" #");
+                        DownloadBar();
                         (part as Walls).Build();
                     }
                 }

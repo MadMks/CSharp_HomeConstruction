@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HousePartsLib;
+using DesignDll;
 
 namespace BuildersLib
 {
@@ -22,8 +23,9 @@ namespace BuildersLib
 
             int nBuiltParts = 0;
 
-            Console.WriteLine(new string('=', 36));
-            Console.WriteLine("\n Отчет о выполненных работах:\n");
+            //WriteLine(new string('=', 36));
+
+            WriteLine("\n Отчет о выполненных работах:\n");
 
             foreach (IPart part in parts)
             {
@@ -41,12 +43,15 @@ namespace BuildersLib
 
             ShowPartOfTheWorkInPercent(parts);
 
-            Console.WriteLine("\n" + new string('=', 36));
+            WriteLine("\n" + new string('=', 36));
 
             // если все построено, то вызовем метод
             // все построено
             if (nBuiltParts == parts.Length)
             {
+                WriteLine(" Нажмите любую клавишу.");
+                ReadKey();
+
                 ConstructionCompleted();
             }
 
@@ -56,7 +61,9 @@ namespace BuildersLib
         {
             WriteLine("\n" + new string('=', 36));
 
+            Design.Green();
             WriteLine("\n Строительство дома завершено.\n");
+            Design.Default();
 
             ImageOfTheHouse();
         }
@@ -64,17 +71,19 @@ namespace BuildersLib
         // Предварительный отчет.
         public void PreliminaryReport(IPart[] parts)
         {
-            Console.WriteLine(" Требуется построить:");
+            WriteLine("\n Требуется построить:");
 
             foreach (IPart part in parts)
             {
-                Console.Write($" - {part}");
+                Write($" - {part}");
                 if (part.NumberOfParts > 1)
                 {
-                    Console.Write($" ({part.NumberOfParts} шт)");
+                    Write($" ({part.NumberOfParts} шт)");
                 }
-                Console.WriteLine();
+                WriteLine();
             }
+
+            Design.Line();
         }
 
         private void ShowPartOfTheWorkInPercent(IPart[] parts)
@@ -103,14 +112,15 @@ namespace BuildersLib
                 }
             }
             
-            Console.WriteLine("\n Всего выполнено: "
+            
+            WriteLine("\n Всего выполнено: "
                 + $"{Math.Round((100 / (double)nOfAllParts) * nBuiltParts)}% работы.");
         }
 
 
         private void ImageOfTheHouse()
         {
-            Console.WriteLine(@"
+            WriteLine(@"
                            (   )
                           (    )
                            (    )
