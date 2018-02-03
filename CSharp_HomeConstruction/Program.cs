@@ -15,6 +15,7 @@ namespace CSharp_HomeConstruction
     {
         static void Main(string[] args)
         {
+            Title = " Строительство дома";
 
             Team team = new Team();
             House house = new House();
